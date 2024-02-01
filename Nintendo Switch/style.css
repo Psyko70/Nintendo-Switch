@@ -1,0 +1,1063 @@
+body{
+    margin:0;
+    overflow:hidden; 
+    height: 100vh;
+}
+
+*{
+    font-family: 'segoe ui','Arial';
+    box-sizing:border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*::selection {
+    color: none;
+    background: none;
+}
+/* For Mozilla Firefox */
+*::-moz-selection {
+    color: none;
+    background: none;
+}
+
+.center{
+    position: relative;
+    width:100vw;
+    height:100vh;
+    text-align: center;
+/*    top:30vh;*/
+}
+
+.hide{
+    display: none;
+}
+
+.heading{
+    position: absolute;
+    width: 65vw;
+    text-align: left;
+    padding-left: 5vw;
+    bottom: 10vh;
+}
+
+.heading p, .heading h1{
+    margin:0;
+}
+
+.heading p {
+    font-weight: 600;
+}
+
+.nintendo-switch{
+    width:1000px;
+    display: inline-block;
+    padding: 12px;
+    height: 450px;
+    text-align: left;
+    transform:scale(0.6)
+}
+
+.left-joycon{
+    background: #01c4e4;
+    height: 425px;
+    width: 12.7%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    float:left;
+    position: relative;
+    box-shadow: 10px 0px 20px #38849f inset;
+    margin-right:2px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.left-joycon:before{
+    content: '';
+    position: absolute;
+    background: #000000;
+    width: 3px;
+    height: 95%;
+    margin-right: -2%;
+    right: 0;
+    margin-top: 15%;
+}
+
+.left-joycon-trigger{
+    content: '';
+    position: absolute;
+    background: #000000;
+    width: 82%;
+    height: 20%;
+    border-top-left-radius: 90%;
+    z-index: -1;
+    top: -5px;
+    left: -3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 5px;
+}
+
+.minus{
+    height: 6px;
+    width: 20px;
+    background: #1d1d1d;
+    position: absolute;
+    right: 8%;
+    top: 8%;
+    border-radius: 2px;
+    border: 1px solid black;
+    box-shadow:1px 2px 3px black;
+/*    box-shadow: 0px 1px 2px black;*/
+}
+
+.left-analog{
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    position: absolute;
+    background: #1d1d1d;
+    top: 80px;
+    left: 35px;
+    box-shadow:1px 5px 23px black;
+}
+
+.left-analog:before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    left: 5px;
+    background: #2b2828;
+    top: 5px;
+    border: 3px solid #313131;
+}
+
+.Arrows{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 140px;
+    left: 17px;
+}
+
+.arrow-key{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background: #2d2d2d;
+    position: absolute;
+    box-shadow:1px 2px 3px black;
+}
+
+.arrow-key:before{
+    background: url(arrow.png) center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    left: 5px;
+    top: 5px;
+}
+
+.arrow-key:nth-child(1){
+    left: 35px;
+    top:5px;
+}
+
+.arrow-key:nth-child(2){
+    top:35px;
+    left: 5px;
+    transform:rotate(30deg);
+}
+
+.arrow-key:nth-child(3){
+    left:65px;
+    top:35px;
+    transform:rotate(-30deg);
+}
+
+.arrow-key:nth-child(4){
+    top:65px;
+    left: 35px;
+    transform:rotate(60deg);
+}
+
+.screen-shot-btn{
+    position: absolute;
+    background: #2d2d2d;
+    border-radius: 5px;
+    height: 25px;
+    width: 25px;
+    bottom:100px;
+    left:70px;
+    box-shadow:1px 2px 3px black;
+}
+
+.screen-shot-btn:before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #3d3d3d;
+    top: 5px;
+    left: 5px;
+}
+
+.console{
+    background:#1d1d1d;
+    border-radius: 5px;
+    width: 74%;
+    height:100%;
+    float:left;
+    position: relative;
+    padding:2%;
+    cursor: pointer;
+    transition:all 1s;
+    box-shadow: 1px 25px 15px silver;
+}
+
+.console::before{
+    content:'';
+    background:#fff;
+    position: absolute;
+    height:15px;
+    width:10px;
+    border-bottom-right-radius: 10px;
+    top:-1px;
+    left:-1px;
+}
+
+.console::after{
+    content: '';
+    background: #fff;
+    position: absolute;
+    height: 15px;
+    width: 10px;
+    border-bottom-left-radius: 10px;
+    right: -1px;
+    top: -1px;
+}
+
+
+.console-dock{
+    background:linear-gradient(#232222, #434040);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: absolute;
+    padding: 2%;
+    left: 0%;
+    z-index: 300;
+    transition: all 1s;
+    bottom: -300%;
+    cursor: pointer;
+    opacity:0;
+    box-shadow: 0px -12px 10px #1d1d1d;
+    border: 2px solid #2c2c2c;
+}
+
+.console-docked{
+    bottom: -13%;
+    opacity:1;
+}
+
+.center-dock{
+    width:60%;
+    height: 100%;
+    margin:0px auto;
+    padding:5%;
+    position: relative
+}
+
+.joycon-container{
+    width: 70%;
+    height: 60%;
+    margin: 0px auto;
+    position: relative;
+    transform: scale(0.75);
+}
+
+.joycon-logo-left-con{
+    
+    height: 100%;
+    width: 45%;
+    float: left;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border: 15px solid #1d1d1d;
+    box-shadow: 0px 0px 2px #1d1d1d;
+}
+
+.joycon-logo-left-con:before{
+    content: '';
+    background: #1d1d1d;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    left: 15%;
+    top: 20%;
+}
+
+.joycon-logo-right-con{
+    
+    height: 100%;
+    width: 45%;
+    margin-left: 10px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    float: right;
+    background: #1d1d1d;
+    box-shadow: 0px 0px 2px #1d1d1d;
+}
+
+.joycon-logo-right-con:before{
+    content: '';
+    background: #333131;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    right: 15%;
+    top: 40%;
+}
+
+.center-dock h2{
+    text-align: center;
+    letter-spacing: 19px;
+    font-size: 1.6em;
+    margin:0;
+    color:#1d1d1d;
+    
+    text-shadow: 0px 0px 1px #1d1d1d;
+}
+
+.center-dock label{
+    
+    letter-spacing: 19px;
+    font-size: 3em;
+    margin: 0;
+    color: #1d1d1d;
+    font-weight: 900;
+    text-align: center;
+    display: block;
+    text-shadow: 0px 0px 1px #1d1d1d;
+}
+
+.screen-bazels{
+    background:black;
+    width:100%;
+    height:100%;
+    border-radius: 5px;
+    padding:4% 5%;
+    position: relative;
+    box-shadow: 1px 5px 10px #222222;
+}
+
+.screen-bazels:before{
+    content: '';
+    background: #1d1d1d;
+    position: absolute;
+    height: 15px;
+    width: 50px;
+    top: -6%;
+    z-index: -1;
+}
+
+.screen-bazels:after{
+    content: '';
+    background: #fff;
+    position: absolute;
+    height: 15px;
+    width: 18px;
+    top: -36px;
+    left: 50px;
+    z-index: -1;
+}
+
+.screen{
+    width:100%;
+    height:100%;
+    background:#eaebe6;
+    border-radius: 2px;
+    padding:2%;
+    background:url('lcc7lzzoy3k21.jpg') no-repeat;
+    background-size: cover;
+}
+
+.screen-off{
+    background:#1d1d1d;
+}
+
+.content-home{
+    border:1px solid silver;
+    height: 100%;
+    width:100%;
+}
+
+.right-joycon{
+    background: #ff5f53;
+    height: 425px;
+    width: 12.8%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    float:left;
+    position: relative;
+    box-shadow:-10px 2px 25px inset #94423d;
+    margin-left: 2px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.right-joycon:before{
+    content: '';
+    position: absolute;
+    background: #000000;
+    width: 3px;
+    height: 95%;
+    margin-left: -2%;
+    margin-top: 15%;
+}
+
+.right-joycon-trigger{
+    content: '';
+    position: absolute;
+    background: #000000;
+    width: 82%;
+    height: 20%;
+    border-top-right-radius: 90%;
+    z-index: -1;
+    top: -5px;
+    left: 25px;
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 5px;
+}
+
+.plus{
+    font-weight: bolder;
+    border-radius: 2px;
+    font-size: 3em;
+    margin-left: 5px;
+    text-shadow:1px 2px 3px black;
+}
+
+
+.right-analog{
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    position: absolute;
+    background: #1d1d1d;
+    bottom: 160px;
+    left: 30px;
+    border:1px solid black;
+    box-shadow:1px 5px 23px black;
+}
+
+.right-analog:before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    left: 4px;
+    background: #2b2828;
+    top: 4px;
+    border: 3px solid #313131;
+}
+
+.Arrows-left{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 65px;
+    left: 15px;
+}
+
+.left-j-arrow-key{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background: #2d2d2d;
+    color: #919191;
+    position: absolute;
+    text-align: center;
+    padding-top: 3px;
+    box-shadow: 1px 2px 3px black;
+    text-shadow: 2px 2px 3px black;
+}
+
+.left-j-arrow-key:nth-child(1){
+    left: 35px;
+    top:5px;
+}
+
+.left-j-arrow-key:nth-child(2){
+    top:35px;
+    left: 5px;
+}
+
+.left-j-arrow-key:nth-child(3){
+    left:65px;
+    top:35px;
+}
+
+.left-j-arrow-key:nth-child(4){
+    top:65px;
+    left: 35px;
+}
+
+.Home-btn{
+    position: absolute;
+    background: #2d2d2d;
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+    bottom:100px;
+    left:20px;
+    border-radius: 50%;
+    box-shadow:1px 2px 3px black;
+}
+
+.Home-btn:before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding: 1px;
+    border: 2px solid #5e5c5c;
+    background: url(Untitled-1.png) center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    left: -1px;
+    top: -1px;
+}
+
+
+
+.joy-con,.joy-con-2{
+    transition:all 1s cubic-bezier(0, 1.01, 0.45, 0.94);
+    cursor: pointer;
+}
+
+.joy-con-hover{
+    margin-top:-15%;
+}
+
+
+.joy-con-hover-2{
+    margin-top:-15%;
+/*
+    animation-fill-mode: forwards;
+    animation-name: animate-right;
+    animation-duration: 1s;
+*/
+}
+
+.animate-left-j{
+    
+    animation-fill-mode: forwards;
+    animation-name: animate-left;
+    animation-duration: 1s;
+
+}
+
+
+@keyframes animate-left{
+    0%{
+        top:0;
+        right:0;
+    }
+    20%{
+        top:-110%;
+    }
+    100%{
+        top: -475px;
+        right: -286px;
+    }
+}
+
+.animate-right-j{
+    animation-fill-mode: forwards;
+    animation-name: animate-right;
+    animation-duration: 1s;
+}
+@keyframes animate-right{
+    0%{
+        top:0;
+        left:0;
+    }
+    20%{
+        top:-110%;
+    }
+    100%{
+        top: -475px;
+        left: -284px;
+    }
+}
+
+
+.joycon-grip-controller{  
+  width: 1000px;
+  margin: 0px auto;
+  height: 0;
+  position: relative;
+}
+
+.controller-pro{
+    background: linear-gradient(#131313, #434040);
+    height: 423px;
+    width: 155px;
+    margin: 0px auto;
+    position: absolute;
+    left: -100%;
+    top: 5.3%;
+    opacity: 0;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.controller-pro:before{
+    content: '';
+    position: absolute;
+    width: 105%;
+    height: 88%;
+    background: linear-gradient(#131313, #434040);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 45%;
+    border-top-left-radius: 45%;
+    transform: rotate(15deg);
+    left: -145%;
+    bottom: -5%;
+    border-top-right-radius: 40%;
+    box-shadow: 1px 12px 5px silver;
+    border-left: 5px solid #181818;
+}
+
+.controller-pro:after{
+    content: '';
+    position: absolute;
+    background: linear-gradient(#131313, #434040);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 45%;
+    border-top-right-radius: 45%;
+    transform: rotate(-15deg);
+    right: -145%;
+    bottom: -5%;
+    width: 105%;
+    height: 88%;
+    box-shadow: 5px 12px 5px silver;
+    border-right: 5px solid #181818;
+}
+
+.left-connector{
+    width: 125px;
+    height: 150px;
+    position: absolute;
+    left: -124px;
+    background: linear-gradient(#141414, #292929);
+    top: 104px;
+    border-radius: 10% 0% 0% 10%;
+}
+
+.left-connector:before{
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    border-radius: 0% 0% 0% 76%;
+    height: 70px;
+    width: 90px;
+    top: -63px;
+    left: 34px;
+}
+
+.left-connector:after{
+    content: '';
+    position: absolute;
+    background: #fff;
+    border-radius: 62% 0% 0% 0%;
+    height: 60px;
+    width: 59px;
+    top: 120px;
+    left: 65px;
+}
+
+.center-pro{
+    width:100%;
+    height:100%;
+    border: 2px solid #1d1d1d;
+}
+
+.right-connector{
+    width: 126px;
+    height: 134px;
+    position: absolute;
+    right: -124px;
+    top: 104px;
+    border-radius: 0% 0% 0% 10%;
+    background: linear-gradient(#141414, #292929);
+}
+
+.right-connector:before{
+    content: '';
+    position: absolute;
+    background: #f9f9f9;
+    border-radius: 0% 0% 76% 0%;
+    left: 2px;
+    height: 70px;
+    width: 90px;
+    top: -65px;
+    z-index: 1;
+}
+
+
+.right-connector:after{
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    right: 60px;
+    border-radius: 0% 49% 0% 0%;
+    z-index: 1;
+    height: 50px;
+    width: 57px;
+    top: 121px;
+    right: 67px;
+}
+
+.center-pro:before {
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 10px;
+    height: 15px;
+    top: -2px;
+    left: -1px;
+    z-index: 0;
+    border-bottom-right-radius: 10px;
+}
+
+.center-pro:after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 10px;
+    height: 15px;
+    top: -2px;
+    right: -1px;
+    z-index: 0;
+    border-bottom-left-radius: 10px;
+}
+
+.controller-grip-logo{
+    background:#fff;
+}
+
+.center-container-grip-logo{
+    position: absolute;
+    top: 22%;
+    z-index: 2500000;
+    left: 12px;
+    color:black;
+    text-align: center;
+    transform:scale(0.75)
+}
+
+.joycon-logo-left-con-grip{
+    width: 50px;
+    height: 110px;
+    margin: 0px auto;
+    display: inline-block;
+    border: 5px solid black;
+    border-radius: 20px 0 0 20px;
+    transform: scale(0.8);
+    margin-right: -10px;
+}
+
+.joycon-logo-left-con-grip:before{
+    content: '';
+    position: absolute;
+    background: #000000;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    top: 15px;
+    left: 10px;
+}
+
+.joycon-logo-right-con-grip{
+    width: 50px;
+    height: 110px;
+    margin: 0px auto;
+    display: inline-block;
+    border: 5px solid black;
+    border-radius: 0 20px 20px 0;
+    background:black;
+    transform: scale(0.8);
+}
+
+.joycon-logo-right-con-grip:before{
+    content: '';
+    position: absolute;
+    background: #2d2d2d;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    top: 40px;
+    right: 10px;
+}
+
+.controller-grip-logo   h2{
+    text-align: center;
+    letter-spacing: 6px;
+    font-size: 1em;
+    margin: 0;
+    margin-top: -5px;
+}
+
+.controller-grip-logo  label{
+    letter-spacing: 5px;
+    font-size: 1.6em;
+    margin: 0;
+    font-weight: 900;
+    text-align: center;
+    display: block;
+}
+
+.charging-lights{
+    position: absolute;
+    height: 100px;
+    width: 30px;
+    top: 30%;
+}
+
+.charging-lights-right{
+    position: absolute;
+    height: 100px;
+    width: 30px;
+    top: 30%;
+    right:0;
+}
+
+.green-light-block{
+    width: 7px;
+    height: 7px;
+    background: green;
+    margin-top: 10px;
+    margin-left: 10px;
+    border:2px solid darkgreen;
+}
+
+.show{
+    animation-fill-mode: forwards;
+    animation-name: animate-show-grip;
+    animation-duration: 1s;
+}
+
+@keyframes animate-show-grip {
+    0%{
+        left: 0;
+    }
+    20%{
+        left: 410px;
+    }
+    100%{
+        left: 410px;
+        opacity:1;
+    }
+}
+
+.joycon-grip-controller-show{
+    height:500px;
+    transition: all 1s;
+}
+
+.TV{
+    transition: all 0.3s;
+    margin-left: -100%;
+}
+
+.TV-on{
+    background: url(lcc7lzzoy3k21.jpg) no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    width: 60vw;
+    margin: 2vw;
+    height: 70vh;
+    border: 6px solid #2d2d2d;
+    box-shadow: 1px 5px 7px black;
+    max-width: 850px;
+    max-height: 500px;
+}
+
+.TV-on:before{
+    content: 'SONY';
+    position: absolute;
+    width: 92px;
+    height: 25px;
+    bottom: -16px;
+    left: 44%;
+    font-weight: 600;
+    background: linear-gradient(0deg, #4c4c4c, gray);
+    color: #bbbbbb;
+    border: 1px solid silver;
+    box-shadow: 0px 1px 2px black;
+}
+
+.switch-docked{
+    position: absolute;
+    margin-left:-5%;
+}
+/*Controller Animations*/
+
+.left-analog-move{
+    transition: all 1s;
+    animation-fill-mode: forwards;
+    animation-name: animate-analog;
+    animation-duration: 1s;
+}
+
+@keyframes animate-analog{
+    0%{
+        left: 30px;
+        top: 47%;
+    }
+    30%{
+        left:25px;
+        top: 46%;
+    }
+    70%{
+        left:30px;
+        top: 46%;
+    }
+    100%{
+        left: 30px;
+        top: 46%;
+    }
+}
+
+.left-analog-move-left{
+    transition: all 1s;
+    animation-fill-mode: forwards;
+    animation-name: animate-analog-left;
+    animation-duration: 1s;
+}
+
+@keyframes animate-analog-left{
+    0%{
+        top: 80px;
+        left: 35px;
+    }
+    50%{
+        top: 85px;
+        left: 30px;
+    }
+    100%{
+        top: 80px;
+        left: 35px;
+    }
+}
+
+.btn:active{
+    box-shadow:1px 2px 15px inset #5d5d5d;   
+}
+
+.trigger:active{
+    transition: all 0.1s;
+    top:-2px;
+}
+
+
+ 
+@media screen and (max-width:980px){
+    .switch-docked{
+        position: unset;
+        transform: scale(0.45);
+        margin: 0px auto;
+        margin-left: -12.5vw;
+        margin-top: -110px;
+    } 
+     
+    .nintendo-switch{
+        margin-left: -10vw;
+    } 
+   
+    .heading{
+        position: unset;
+    }
+    
+    .TV-on{
+        width: 95%;
+        height: 400px;
+        position: relative;
+        margin: 2.5%;
+        
+    }
+    
+    .TV-on:before{
+        transform: scale(0.5);
+        top: 96%;
+        left: 0;
+        position: relative;
+        padding: 2px 5px;
+        font-size: 10px;
+    }
+    
+    html{
+        width: 100vw;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width:480px){
+    .switch-docked{
+        position: unset;
+        transform: scale(0.3);
+        margin-left: -70vw;
+        margin-top: -18vh;
+    } 
+     
+    .nintendo-switch{
+        position: unset;
+        transform: scale(0.3);
+        margin: 0px auto;
+        margin-left: -300px;
+        margin-top: -150px;
+    } 
+   
+    .heading{
+        position: unset;
+    }
+    
+    .TV-on{
+        width: 95%;
+        height: 25vh;
+        position: unset;
+        margin: 2.5%;
+    } 
+    
+    .TV-on:before{
+        transform: scale(0.5);
+        padding: 2px 5px;
+        font-size: 8px;
+        top: 94%;
+    }
+    
+    html{
+        width: 100vw;
+        overflow: hidden;
+    }
+}
+
+
+

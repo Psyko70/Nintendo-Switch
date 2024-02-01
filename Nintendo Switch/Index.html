@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+    <meta name="viewport" content = "width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="center">
+    <div class="TV"></div>
+    <div class="heading">
+        <h1>NINTENDO SWITCH</h1>
+        <p class="p2">Play Portable</p>
+        <p class="p1 hide">Or, Play on TV</p>
+        <p style="
+    color: #009688;">Double click <b>"joycons"</b> or <b>"Dock"</b> for fun!</p>
+    </div>
+    <div class="nintendo-switch">
+        <div class="joycon-grip-controller">
+            <div class="controller-pro">
+                <div class="left-connector"></div>
+                <div class="center-pro">
+                <div class="right-connector"></div>
+                <div class="charging-lights">
+                    <div class="green-light-block"></div>
+                    <div class="green-light-block"></div>
+                    <div class="green-light-block"></div>
+                    <div class="green-light-block"></div>
+                </div>
+                <div class="controller-grip-logo">
+                    <div class="center-container-grip-logo">
+                         <div class="joycon-logo-left-con-grip"></div>
+                        <div class="joycon-logo-right-con-grip"></div>
+                        <h2>NINTENDO</h2>
+                        <label>SWITCH</label>
+                    </div>
+                </div>
+                <div class="charging-lights-right">
+                    <div class="green-light-block"></div>
+                    <div class="green-light-block"></div>
+                    <div class="green-light-block"></div>
+                    <div class="green-light-block"></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="joy-con left-joycon">
+            <div class="left-joycon-trigger trigger"></div>
+            <div class="minus "></div>
+            <div class="left-analog"></div>
+            <div class="Arrows">
+                <div class="arrow-key btn"></div>
+                <div class="arrow-key btn"></div>
+                <div class="arrow-key btn"></div>
+                <div class="arrow-key btn"></div>
+            </div>
+            <div class="screen-shot-btn btn"></div>
+        </div>
+        <div class="console">
+            <div class="console-dock">
+            
+                <div class="center-dock">
+                
+                    <div class="joycon-container">
+                        <div class="joycon-logo-left-con"></div>
+                        <div class="joycon-logo-right-con"></div>
+                    </div>
+                    <h2>NINTENDO</h2>
+                    <label>SWITCH</label>
+                </div>
+                
+            </div>
+            <div class="screen-bazels">
+                <div class="screen">
+                </div>
+            </div>
+        </div>
+        <div class="joy-con-2 right-joycon">
+            <div class="right-joycon-trigger trigger"></div>
+            <div class="plus">+</div>
+            
+            <div class="Arrows-left">
+                <div class="left-j-arrow-key btn">X</div>
+                <div class="left-j-arrow-key btn">Y</div>
+                <div class="left-j-arrow-key btn">B</div>
+                <div class="left-j-arrow-key btn">A</div>
+            </div>
+            <div class="right-analog"></div>
+            <div class="Home-btn btn"></div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script src = "http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+<script>
+    $(document).ready(function(){
+        
+        $(".joy-con").dblclick(function(){
+            $(this).toggleClass("joy-con-hover");
+            $(".console").addClass("margin-set");
+        });
+        
+        $(".joy-con-2").dblclick(function(){
+            $(this).toggleClass("joy-con-hover-2");
+        });
+        
+        function movedock(){
+           $(".joy-con").addClass("joy-con-hover");
+           $(".joy-con-2").addClass("joy-con-hover-2");
+           setTimeout(function () {
+                $(".console-dock").toggleClass("console-docked");
+                $(".screen").toggleClass("screen-off");
+                $(".joy-con").toggleClass("animate-left-j");
+                $(".joy-con-2").toggleClass("animate-right-j");
+                $(".controller-pro").toggleClass("show");
+                $(".joycon-grip-controller").toggleClass("joycon-grip-controller-show");
+                $(".joy-con").removeClass("joy-con-hover");
+                $(".joy-con-2").removeClass("joy-con-hover-2");
+                $(".TV").toggleClass("TV-on");
+                $(".nintendo-switch").toggleClass("switch-docked");
+                $(".p1").toggleClass("hide");
+                $(".p2").toggleClass("hide");
+            }, 300);
+//            $(".joy-con").hide();
+//            $(".joy-con-2").hide();
+        }
+        
+        $(".console").dblclick(function(){
+            movedock();
+        });
+        
+        $(".controller-pro").dblclick(function(){
+            movedock();
+        });
+        
+        $(".left-analog").hover(function(){
+            $(this).toggleClass("left-analog-move-left");
+        });
+        
+        $(".right-analog").hover(function(){
+            $(this).toggleClass("left-analog-move");
+        });
+        
+//        $('.console').on('doubletap', function() { 
+//             movedock();
+//        });
+//        
+//        $('.controller-pro').on('doubletap', function() { 
+//             movedock();
+//        });
+//        
+//        $(".joy-con").on('doubletap', function() { 
+//            $(this).toggleClass("joy-con-hover");
+//            $(".console").addClass("margin-set");
+//        });
+//        
+//        $(".joy-con-2").on('doubletap', function() { 
+//            $(this).toggleClass("joy-con-hover-2");
+//        });
+        
+//        $(".console").trigger("dblclick");
+        
+        
+        
+    });
+</script>
+</html> 
